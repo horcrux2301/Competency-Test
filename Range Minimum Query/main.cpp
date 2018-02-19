@@ -35,7 +35,7 @@ int main(){
   std::cout << "Updating the value at node 0 to 10 and at node 4 to 15" << std::endl;
 
   //Print the segment tree.
-  std::cout << "Printing the segment Tree" << std::endl;
+  std::cout << std::endl << "Printing the segment Tree" << std::endl;
   seg.PrintSegmentTree();
   std::cout  << std::endl;
 
