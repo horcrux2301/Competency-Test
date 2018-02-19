@@ -6,7 +6,7 @@ using namespace std;
 int main(){
   // This calculates the Minimum of a range.
   SegmentTree<int, std::function<int (int, int)>> seg;
-  int arr[] = {1,2,3,4,5};
+  int arr[] = {3,6,11,23,55,23,0,12};
   int s = 0;
   int e = 4;
 
