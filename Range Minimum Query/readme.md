@@ -11,4 +11,6 @@ g++ --std=c++11 main.cpp -o main.out
 ./main.out
 ```
 
+Value above the node are index value and node value respectively.
+
 ![SegmentTree](https://i.imgur.com/gr6xfLF.png)
