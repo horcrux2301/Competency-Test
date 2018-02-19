@@ -10,4 +10,4 @@
 
 `ComparisonFunction` is used as a lambda on the basis of which merging at the nodes takes place.
 
-I have included two subdirectories `Range Minimum Query` and 'Range Sum' to check for the accuracy of the code.
+I have included two subdirectories `Range Minimum Query` and `Range Sum` to check for the accuracy of the code.
