@@ -51,7 +51,7 @@ private:
       PrintTree(start->right);
     if(start->left!=NULL)
       PrintTree(start->left);
-    std::cout << start->index << ' ' << start->data << std::endl;
+    std::cout << "Value at index " << start->index << " is " << start->data << std::endl;
   }
 
 

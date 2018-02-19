@@ -30,7 +30,11 @@ int main(){
   seg.UpdateSegmentTree(0,10);
   seg.UpdateSegmentTree(4,15);
 
-  std::cout << "Updating value at index 0 to 10 and at index 4 to 15" << std::endl;
+  std::cout << std::endl << "Updating value at index 0 to 10 and at index 4 to 15" << std::endl;
+
+  std::cout << "Printing the segment Tree" << std::endl;
+  seg.PrintSegmentTree();
+  std::cout << std::endl;
 
   // Find sum of ranges.
   std::cout << std::endl << "Range Queriesa after updating values" << std::endl;
