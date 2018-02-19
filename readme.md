@@ -1,7 +1,7 @@
-Competency Test Repository.
+# Competency Test Repository.
 
 ### Running the program.
 ```
-g++ main.cpp -o main.out
+g++ --std=c++11 RangeSum.cpp -o main.out
 ./main.out
 ```
