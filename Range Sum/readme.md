@@ -7,4 +7,4 @@
 
 Index of the node is above the node. The sum value of range is in the node.
 
-![SegmentTree](https://ibb.co/jsmsmS)
+![SegmentTree](https://imgur.com/a/MCS31)
