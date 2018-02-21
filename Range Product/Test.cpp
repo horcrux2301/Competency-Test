@@ -7,17 +7,17 @@
 #include <algorithm>
 using namespace std;
 
-BOOST_AUTO_TEST_CASE(RangeMinTestCase)
+BOOST_AUTO_TEST_CASE(RangeSumTestCase)
 {
   // Create a segment tree
-  SegmentTree<int, std::function<int (int, int)> > seg;
-  int arr[] = {4,9,11,4,5,4,10,3};
-  int s = 0;
-  int e = 7;
-  seg.InitSegmentTree(arr, s, e, [](int a,int b) -> int { return a<b ? a : b; });
+  SegmentTree<long, std::function<long (long, long)> > seg;
+  long arr[] = {4,9,11,4,5,4,10,3};
+  long s = 0;
+  long e = 7;
+  seg.InitSegmentTree(arr, s, e, [] (long a,long b) -> long {return (a*b);});
 
   // Test cases
-  vector<pair<int,int> > v;
+  vector<pair<long,long> > v;
   v.push_back(make_pair(0,4));
   v.push_back(make_pair(1,3));
   v.push_back(make_pair(5,7));
@@ -27,10 +27,10 @@ BOOST_AUTO_TEST_CASE(RangeMinTestCase)
   // Checking test cases
 
   for(int i=0;i<v.size();i++){
-    int ComputedValue = seg.PrintComputedValue(v[i].first, v[i].second);
-    int tempValue = arr[v[i].first];
+    long ComputedValue = seg.PrintComputedValue(v[i].first, v[i].second);
+    long tempValue = arr[v[i].first];
     for(int j=v[i].first+1;j<v[i].second+1;j++){
-      tempValue=min(arr[j],tempValue);
+      tempValue*=arr[j];
     }
     if( ComputedValue != tempValue ){
       std::string error = "Range Test Case Failed on Test Case " + boost::lexical_cast<std::string>(i);
@@ -40,14 +40,14 @@ BOOST_AUTO_TEST_CASE(RangeMinTestCase)
 }
 
 
-BOOST_AUTO_TEST_CASE(RangeMinTestCaseAfterUpdate)
+BOOST_AUTO_TEST_CASE(RangeSumTestCaseAfterUpdate)
 {
   // Create a segment tree
-  SegmentTree<int, std::function<int (int, int)> > seg;
-  int arr[] = {4,9,11,4,5,4,10,3};
-  int s = 0;
-  int e = 7;
-  seg.InitSegmentTree(arr, s, e, [](int a,int b) -> int { return a<b ? a : b; });
+  SegmentTree<long, std::function<long (long, long)> > seg;
+  long arr[] = {4,9,11,4,5,4,10,3};
+  long s = 0;
+  long e = 7;
+  seg.InitSegmentTree(arr, s, e, [] (long a,long b) -> long {return (a*b);});
 
 
   //Updated the values
@@ -62,7 +62,7 @@ BOOST_AUTO_TEST_CASE(RangeMinTestCaseAfterUpdate)
   arr[7]=91;
 
   // Test cases
-  vector<pair<int,int> > v;
+  vector<pair<long,long> > v;
   v.push_back(make_pair(0,4));
   v.push_back(make_pair(1,3));
   v.push_back(make_pair(5,7));
@@ -72,14 +72,15 @@ BOOST_AUTO_TEST_CASE(RangeMinTestCaseAfterUpdate)
   // Checking test cases
 
   for(int i=0;i<v.size();i++){
-    int ComputedValue = seg.PrintComputedValue(v[i].first, v[i].second);
-    int tempValue = arr[v[i].first];
+    long ComputedValue = seg.PrintComputedValue(v[i].first, v[i].second);
+    long tempValue = arr[v[i].first];
     for(int j=v[i].first+1;j<v[i].second+1;j++){
-      tempValue=min(arr[j],tempValue);
+      tempValue*=arr[j];
     }
     if( ComputedValue != tempValue ){
       std::string error = "Range Test Case Failed on Test Case " + boost::lexical_cast<std::string>(i);
       BOOST_ERROR(error);
     }
   }
+
 }
