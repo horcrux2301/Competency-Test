@@ -5,7 +5,6 @@
 #include "SegmentTree.h"
 #include <vector>
 #include <algorithm>
-using namespace std;
 
 BOOST_AUTO_TEST_CASE(RangeMinTestCase)
 {
@@ -17,12 +16,12 @@ BOOST_AUTO_TEST_CASE(RangeMinTestCase)
   seg.InitSegmentTree(arr, s, e, [](int a,int b) -> int { return a<b ? a : b; });
 
   // Test cases
-  vector<pair<int,int> > v;
-  v.push_back(make_pair(0,4));
-  v.push_back(make_pair(1,3));
-  v.push_back(make_pair(5,7));
-  v.push_back(make_pair(7,7));
-  v.push_back(make_pair(3,7));
+  std::vector<std::pair<int,int> > v;
+  v.push_back(std::make_pair(0,4));
+  v.push_back(std::make_pair(1,3));
+  v.push_back(std::make_pair(5,7));
+  v.push_back(std::make_pair(7,7));
+  v.push_back(std::make_pair(3,7));
 
   // Checking test cases
 
@@ -30,7 +29,7 @@ BOOST_AUTO_TEST_CASE(RangeMinTestCase)
     int ComputedValue = seg.PrintComputedValue(v[i].first, v[i].second);
     int tempValue = arr[v[i].first];
     for(int j=v[i].first+1;j<v[i].second+1;j++){
-      tempValue=min(arr[j],tempValue);
+      tempValue=std::min(arr[j],tempValue);
     }
     if( ComputedValue != tempValue ){
       std::string error = "Range Test Case Failed on Test Case " + boost::lexical_cast<std::string>(i);
@@ -62,12 +61,12 @@ BOOST_AUTO_TEST_CASE(RangeMinTestCaseAfterUpdate)
   arr[7]=91;
 
   // Test cases
-  vector<pair<int,int> > v;
-  v.push_back(make_pair(0,4));
-  v.push_back(make_pair(1,3));
-  v.push_back(make_pair(5,7));
-  v.push_back(make_pair(7,7));
-  v.push_back(make_pair(3,7));
+  std::vector<std::pair<int,int> > v;
+  v.push_back(std::make_pair(0,4));
+  v.push_back(std::make_pair(1,3));
+  v.push_back(std::make_pair(5,7));
+  v.push_back(std::make_pair(7,7));
+  v.push_back(std::make_pair(3,7));
 
   // Checking test cases
 
@@ -75,7 +74,7 @@ BOOST_AUTO_TEST_CASE(RangeMinTestCaseAfterUpdate)
     int ComputedValue = seg.PrintComputedValue(v[i].first, v[i].second);
     int tempValue = arr[v[i].first];
     for(int j=v[i].first+1;j<v[i].second+1;j++){
-      tempValue=min(arr[j],tempValue);
+      tempValue=std::min(arr[j],tempValue);
     }
     if( ComputedValue != tempValue ){
       std::string error = "Range Test Case Failed on Test Case " + boost::lexical_cast<std::string>(i);

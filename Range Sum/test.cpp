@@ -5,7 +5,6 @@
 #include "SegmentTree.h"
 #include <vector>
 #include <algorithm>
-using namespace std;
 
 BOOST_AUTO_TEST_CASE(RangeSumTestCase)
 {
@@ -17,12 +16,12 @@ BOOST_AUTO_TEST_CASE(RangeSumTestCase)
   seg.InitSegmentTree(arr, s, e, [] (int a,int b) -> int {return (a+b);});
 
   // Test cases
-  vector<pair<int,int> > v;
-  v.push_back(make_pair(0,4));
-  v.push_back(make_pair(1,3));
-  v.push_back(make_pair(5,7));
-  v.push_back(make_pair(7,7));
-  v.push_back(make_pair(3,7));
+  std::vector<std::pair<int,int> > v;
+  v.push_back(std::make_pair(0,4));
+  v.push_back(std::make_pair(1,3));
+  v.push_back(std::make_pair(5,7));
+  v.push_back(std::make_pair(7,7));
+  v.push_back(std::make_pair(3,7));
 
   // Checking test cases
 
@@ -62,12 +61,12 @@ BOOST_AUTO_TEST_CASE(RangeSumTestCaseAfterUpdate)
   arr[7]=91;
 
   // Test cases
-  vector<pair<int,int> > v;
-  v.push_back(make_pair(0,4));
-  v.push_back(make_pair(1,3));
-  v.push_back(make_pair(5,7));
-  v.push_back(make_pair(7,7));
-  v.push_back(make_pair(3,7));
+  std::vector<std::pair<int,int> > v;
+  v.push_back(std::make_pair(0,4));
+  v.push_back(std::make_pair(1,3));
+  v.push_back(std::make_pair(5,7));
+  v.push_back(std::make_pair(7,7));
+  v.push_back(std::make_pair(3,7));
 
   // Checking test cases
 

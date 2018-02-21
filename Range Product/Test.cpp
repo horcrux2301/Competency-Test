@@ -5,9 +5,8 @@
 #include "SegmentTree.h"
 #include <vector>
 #include <algorithm>
-using namespace std;
 
-BOOST_AUTO_TEST_CASE(RangeSumTestCase)
+BOOST_AUTO_TEST_CASE(RangeProductTestCase)
 {
   // Create a segment tree
   SegmentTree<long, std::function<long (long, long)> > seg;
@@ -17,12 +16,12 @@ BOOST_AUTO_TEST_CASE(RangeSumTestCase)
   seg.InitSegmentTree(arr, s, e, [] (long a,long b) -> long {return (a*b);});
 
   // Test cases
-  vector<pair<long,long> > v;
-  v.push_back(make_pair(0,4));
-  v.push_back(make_pair(1,3));
-  v.push_back(make_pair(5,7));
-  v.push_back(make_pair(7,7));
-  v.push_back(make_pair(3,7));
+  std::vector<std::pair<long,long> > v;
+  v.push_back(std::make_pair(0,4));
+  v.push_back(std::make_pair(1,3));
+  v.push_back(std::make_pair(5,7));
+  v.push_back(std::make_pair(7,7));
+  v.push_back(std::make_pair(3,7));
 
   // Checking test cases
 
@@ -40,7 +39,7 @@ BOOST_AUTO_TEST_CASE(RangeSumTestCase)
 }
 
 
-BOOST_AUTO_TEST_CASE(RangeSumTestCaseAfterUpdate)
+BOOST_AUTO_TEST_CASE(RangeProductTestCaseAfterUpdate)
 {
   // Create a segment tree
   SegmentTree<long, std::function<long (long, long)> > seg;
@@ -62,12 +61,12 @@ BOOST_AUTO_TEST_CASE(RangeSumTestCaseAfterUpdate)
   arr[7]=91;
 
   // Test cases
-  vector<pair<long,long> > v;
-  v.push_back(make_pair(0,4));
-  v.push_back(make_pair(1,3));
-  v.push_back(make_pair(5,7));
-  v.push_back(make_pair(7,7));
-  v.push_back(make_pair(3,7));
+  std::vector<std::pair<long,long> > v;
+  v.push_back(std::make_pair(0,4));
+  v.push_back(std::make_pair(1,3));
+  v.push_back(std::make_pair(5,7));
+  v.push_back(std::make_pair(7,7));
+  v.push_back(std::make_pair(3,7));
 
   // Checking test cases
 
